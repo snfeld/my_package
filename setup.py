@@ -19,7 +19,7 @@ setup(
     data_files=data_files,
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='user',
+    maintainer='snfeld',
     maintainer_email='user.name@mail.com',
     description='TODO: Package description',
     license='Apache License 2.0',
