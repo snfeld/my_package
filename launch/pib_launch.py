@@ -7,7 +7,7 @@ from webots_ros2_driver.webots_controller import WebotsController
 
 
 def generate_launch_description():
-    package_dir = get_package_share_directory('my_package')
+    package_dir = get_package_share_directory('pibsim_webots')
     robot_description_path = os.path.join(package_dir, 'resource', 'pib.urdf')
 
     webots = WebotsLauncher(

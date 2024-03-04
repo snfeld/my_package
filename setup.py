@@ -2,7 +2,7 @@ import os
 from glob import glob
 from setuptools import setup
 
-package_name = 'my_package'
+package_name = 'pibsim_webots'
 data_files = [(os.path.join('share', package_name, 'protos'), glob(os.path.join('protos', '*.proto'))),
         (os.path.join('share', package_name, 'protos/meshes'), glob(os.path.join('protos/meshes', '*.stl'))),
         ]
@@ -26,7 +26,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'pib_driver = my_package.pib_driver:main',
+            'pib_driver = pibsim_webots.pib_driver:main',
         ],
     },
 )
