@@ -14,14 +14,14 @@ data_files.append(('share/' + package_name, ['package.xml']))
 
 setup(
     name=package_name,
-    version='0.1.0',
+    version='0.2.0',
     packages=[package_name],
     data_files=data_files,
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='snfeld',
     maintainer_email='user.name@mail.com',
-    description='TODO: Package description',
+    description='simulation of the open source human robot pib with webots',
     license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={
