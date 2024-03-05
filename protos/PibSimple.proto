@@ -1220,6 +1220,7 @@ PROTO PibSimple [
                                                           name "thumb_right_proximal"
                                                           maxVelocity 20.0
                                                           maxPosition 1.5707963267948966
+                                                          minPosition -1.5707963267948966
                                                           maxTorque 1000.0
                                                         }
                                                         PositionSensor {
@@ -1258,6 +1259,7 @@ PROTO PibSimple [
                                                                 name "thumb_right_distal"
                                                                 maxVelocity 20.0
                                                                 maxPosition 1.5707963267948966
+                                                                minPosition -1.5707963267948966
                                                                 maxTorque 1000.0
                                                               }
                                                               PositionSensor {
