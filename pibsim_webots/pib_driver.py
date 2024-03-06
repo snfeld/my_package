@@ -14,8 +14,18 @@ class PibDriver:
         self.__devices['elbow_right'] = self.__robot.getDevice('ellbow_right')
         self.__devices['elbow_left'] = self.__robot.getDevice('ellbow_left')
 
-        self.__devices['lower_arm_right'] = self.__robot.getDevice('forearm_right')
-        self.__devices['lower_arm_left'] = self.__robot.getDevice('forearm_left')
+        self.__devices['lower_arm_right_rotation'] = self.__robot.getDevice('forearm_right')
+        self.__devices['lower_arm_left_rotation'] = self.__robot.getDevice('forearm_left')
+        self.__devices['thumb_left_stretch'] = [self.__robot.getDevice('thumb_left_distal'), self.__robot.getDevice('thumb_left_proximal'),]
+        self.__devices['thumb_right_stretch'] = [self.__robot.getDevice('thumb_right_distal'),self.__robot.getDevice('thumb_right_proximal'),]
+        self.__devices['index_right_stretch'] = [self.__robot.getDevice('index_right_distal'),self.__robot.getDevice('index_right_proximal'),]
+        self.__devices['middle_right_stretch'] = [self.__robot.getDevice('middle_right_distal'),self.__robot.getDevice('middle_right_proximal'),]
+        self.__devices['ring_right_stretch'] = [self.__robot.getDevice('ring_right_distal'),self.__robot.getDevice('ring_right_proximal'),]
+        self.__devices['pinky_right_stretch'] = [self.__robot.getDevice('pinky_right_distal'),self.__robot.getDevice('pinky_right_proximal'),]
+        self.__devices['index_left_stretch'] = [self.__robot.getDevice('index_left_distal'),self.__robot.getDevice('index_left_proximal'),]
+        self.__devices['middle_left_stretch'] = [self.__robot.getDevice('middle_left_distal'),self.__robot.getDevice('middle_left_proximal'),]
+        self.__devices['ring_left_stretch'] = [self.__robot.getDevice('ring_left_distal'),self.__robot.getDevice('ring_left_proximal'),]
+        self.__devices['pinky_left_stretch'] = [self.__robot.getDevice('pinky_left_distal'),self.__robot.getDevice('pinky_left_proximal'),]
 
         self.__target_trajectory = JointTrajectory()
 
@@ -48,4 +58,8 @@ class PibDriver:
                 self.__node.get_logger().info('created device: ' + device + '   name: ' + name)
             position = math.radians(self.__target_trajectory.points[0].positions[0]/100.0)
             if self.__devices[name] is not None:
-                self.__devices[name].setPosition(position)
+                if name.find('stretch') != -1 :
+                    for dev in self.__devices[name]:
+                        dev.setPosition(position)
+                else:
+                    self.__devices[name].setPosition(position)
