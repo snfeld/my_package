@@ -136,7 +136,7 @@ PROTO PibSimple [
                                   metalness 0
                                 }
                                 geometry DEF oak_d_lite Mesh {
-                                  url "meshes/oak_d_lite.stl"
+                                  url "meshes/oak_d_lite_s1.stl"
                                 }
                               }
                             ]
