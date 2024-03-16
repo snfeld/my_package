@@ -26,6 +26,25 @@ class PibDriver:
         self.__devices['middle_left_stretch'] = [self.__robot.getDevice('middle_left_distal'),self.__robot.getDevice('middle_left_proximal'),]
         self.__devices['ring_left_stretch'] = [self.__robot.getDevice('ring_left_distal'),self.__robot.getDevice('ring_left_proximal'),]
         self.__devices['pinky_left_stretch'] = [self.__robot.getDevice('pinky_left_distal'),self.__robot.getDevice('pinky_left_proximal'),]
+        self.__devices['all_fingers_right'] = [self.__robot.getDevice('pinky_right_distal'),
+                self.__robot.getDevice('pinky_right_proximal'),
+                self.__robot.getDevice('index_right_distal'),
+                self.__robot.getDevice('index_right_proximal'),
+                self.__robot.getDevice('middle_right_distal'),
+                self.__robot.getDevice('middle_right_proximal'),
+                self.__robot.getDevice('ring_right_distal'),
+                self.__robot.getDevice('ring_right_proximal'),]
+        self.__devices['all_fingers_left'] = [self.__robot.getDevice('pinky_left_distal'),
+                self.__robot.getDevice('pinky_left_proximal'),
+                self.__robot.getDevice('index_left_distal'),
+                self.__robot.getDevice('index_left_proximal'),
+                self.__robot.getDevice('middle_left_distal'),
+                self.__robot.getDevice('middle_left_proximal'),
+                self.__robot.getDevice('ring_left_distal'),
+                self.__robot.getDevice('ring_left_proximal'),
+                self.__robot.getDevice('thumb_left_distal'), 
+                self.__robot.getDevice('thumb_left_proximal'),
+                ]
 
         self.__target_trajectory = JointTrajectory()
 
@@ -58,7 +77,7 @@ class PibDriver:
                 self.__node.get_logger().info('created device: ' + device + '   name: ' + name)
             position = math.radians(self.__target_trajectory.points[0].positions[0]/100.0)
             if self.__devices[name] is not None:
-                if name.find('stretch') != -1 :
+                if (name.find('stretch') != -1) or (name.find('all') != -1) :
                     for dev in self.__devices[name]:
                         dev.setPosition(position)
                 else:
