@@ -33,7 +33,10 @@ class PibDriver:
                 self.__robot.getDevice('middle_right_distal'),
                 self.__robot.getDevice('middle_right_proximal'),
                 self.__robot.getDevice('ring_right_distal'),
-                self.__robot.getDevice('ring_right_proximal'),]
+                self.__robot.getDevice('ring_right_proximal'),
+                self.__robot.getDevice('thumb_right_distal'), 
+                self.__robot.getDevice('thumb_right_proximal'),
+                ]
         self.__devices['all_fingers_left'] = [self.__robot.getDevice('pinky_left_distal'),
                 self.__robot.getDevice('pinky_left_proximal'),
                 self.__robot.getDevice('index_left_distal'),
