@@ -2516,10 +2516,5 @@ PROTO PibSimple [
       }
     ]
     name IS name
-    physics Physics {
-      density -1
-      mass 1.000000
-      centerOfMass [ 0.000000 0.000000 0.000000 ]
-    }
   }
 }
