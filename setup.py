@@ -8,7 +8,11 @@ data_files = [(os.path.join('share', package_name, 'protos'), glob(os.path.join(
         ]
 data_files.append(('share/ament_index/resource_index/packages', ['resource/' + package_name]))
 data_files.append(('share/' + package_name + '/launch', ['launch/pib_launch.py']))
+data_files.append(('share/' + package_name + '/launch', ['launch/pib_launch_fix.py']))
+data_files.append(('share/' + package_name + '/launch', ['launch/pib_launch_dyn.py']))
 data_files.append(('share/' + package_name + '/worlds', ['worlds/PibSim.wbt']))
+data_files.append(('share/' + package_name + '/worlds', ['worlds/PibSimFix.wbt']))
+data_files.append(('share/' + package_name + '/worlds', ['worlds/PibSimDyn.wbt']))
 data_files.append(('share/' + package_name + '/resource', ['resource/pib.urdf']))
 data_files.append(('share/' + package_name, ['package.xml']))
 
