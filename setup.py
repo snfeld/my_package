@@ -5,6 +5,7 @@ from setuptools import setup
 package_name = 'pibsim_webots'
 data_files = [(os.path.join('share', package_name, 'protos'), glob(os.path.join('protos', '*.proto'))),
         (os.path.join('share', package_name, 'protos/meshes'), glob(os.path.join('protos/meshes', '*.stl'))),
+        (os.path.join('share', package_name, 'protos/sound'), glob(os.path.join('protos/sound', '*.wav'))),
         ]
 data_files.append(('share/ament_index/resource_index/packages', ['resource/' + package_name]))
 data_files.append(('share/' + package_name + '/launch', ['launch/pib_launch.py']))

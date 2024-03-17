@@ -663,6 +663,7 @@ PROTO PibSimple [
                                                     maxVelocity 20.0
                                                     maxPosition 1.5707963267948966
                                                     maxTorque 1000.0
+#                                                    sound "sound/servo-noise-03.wav"
                                                   }
                                                   PositionSensor {
                                                     name "ring_right_proximal_sensor"
@@ -695,6 +696,7 @@ PROTO PibSimple [
                                                           maxVelocity 20.0
                                                           maxPosition 1.5707963267948966
                                                           maxTorque 1000.0
+#                                                    sound "sound/servo-noise-03.wav"
                                                         }
                                                         PositionSensor {
                                                           name "ring_right_distal_sensor"
@@ -836,6 +838,7 @@ PROTO PibSimple [
                                                     maxVelocity 20.0
                                                     maxPosition 1.5707963267948966
                                                     maxTorque 1000.0
+#                                                    sound "sound/servo-noise-03.wav"
                                                   }
                                                   PositionSensor {
                                                     name "middle_right_proximal_sensor"
@@ -867,6 +870,7 @@ PROTO PibSimple [
                                                           maxVelocity 20.0
                                                           maxPosition 1.5707963267948966
                                                           maxTorque 1000.0
+#                                                    sound "sound/servo-noise-03.wav"
                                                         }
                                                         PositionSensor {
                                                           name "middle_right_distal_sensor"
@@ -2516,10 +2520,5 @@ PROTO PibSimple [
       }
     ]
     name IS name
-    physics Physics {
-      density -1
-      mass 1.000000
-      centerOfMass [ 0.000000 0.000000 0.000000 ]
-    }
   }
 }
