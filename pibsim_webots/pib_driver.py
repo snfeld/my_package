@@ -75,19 +75,23 @@ class PibDriver:
     def convert_cerebra(self, position):
         return (math.radians(position/100.0))
 
+    def create_device(self, name):
+        rotIndex = name.find('rota')
+        if rotIndex != -1 :
+            device = name[:(rotIndex-1)]
+        else:
+            device = name
+        self.__devices[name] = [self.__robot.getDevice(device),]
+        self.__node.get_logger().info('created device: ' + device + '   name: ' + name)
+
+
     def step(self):
         rclpy.spin_once(self.__node, timeout_sec=0)
 
         if len(self.__target_trajectory.joint_names) > 0:
             name = self.__target_trajectory.joint_names[0]
             if not (name in self.__devices):
-                rotIndex = name.find('rota')
-                if rotIndex != -1 :
-                    device = name[:(rotIndex-1)]
-                else:
-                    device = name
-                self.__devices[name] = [self.__robot.getDevice(device),]
-                self.__node.get_logger().info('created device: ' + device + '   name: ' + name)
+                self.create_device(name)
 
             position = self.convert_cerebra(self.__target_trajectory.points[0].positions[0])
 
