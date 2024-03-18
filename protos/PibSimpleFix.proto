@@ -345,7 +345,7 @@ PROTO PibSimpleFix [
                                     metalness 0
                                   }
                                   geometry DEF urdf_ellbow_upper Mesh {
-                                    url "meshes/urdf_ellbow_upper_s1.stl"
+                                    url "meshes/urdf_ellbow_upper_s2.stl"
                                   }
                                 }
                               ]
@@ -383,7 +383,7 @@ PROTO PibSimpleFix [
                                           metalness 0
                                         }
                                         geometry DEF urdf_ellbow_lower_marker Mesh {
-                                          url "meshes/urdf_ellbow_lower_marker.stl"
+                                          url "meshes/urdf_ellbow_lower_marker_s1.stl"
                                         }
                                       }
                                     ]
@@ -422,7 +422,7 @@ PROTO PibSimpleFix [
                                                 metalness 0
                                               }
                                               geometry DEF urdf_forearm_marker Mesh {
-                                                url "meshes/urdf_forearm_marker.stl"
+                                                url "meshes/urdf_forearm_marker_s1.stl"
                                               }
                                             }
                                           ]
@@ -1729,7 +1729,7 @@ PROTO PibSimpleFix [
                                           metalness 0
                                         }
                                         geometry DEF urdf_ellbow_lower Mesh {
-                                          url "meshes/urdf_ellbow_lower.stl"
+                                          url "meshes/urdf_ellbow_lower_s1.stl"
                                         }
                                       }
                                     ]
