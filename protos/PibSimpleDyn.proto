@@ -33,7 +33,7 @@ PROTO PibSimpleDyn [
             children [
               Shape {
                 appearance DEF urdf_body_material PBRAppearance {
-                  baseColor 0.500000 0.500000 0.500000
+                  baseColor 0.500000 0.500000 0.900000
                   roughness 1.000000
                   metalness 0
                 }
@@ -282,7 +282,7 @@ PROTO PibSimpleDyn [
                         children [
                           Shape {
                             appearance DEF urdf_shoulder_vertical_marker_material PBRAppearance {
-                              baseColor 0.500000 0.500000 0.500000
+                              baseColor 0.800000 0.600000 0.600000
                               roughness 1.000000
                               metalness 0
                             }
@@ -321,7 +321,7 @@ PROTO PibSimpleDyn [
                               children [
                                 Shape {
                                   appearance DEF urdf_ellbow_upper_material PBRAppearance {
-                                    baseColor 0.500000 0.500000 0.500000
+                                    baseColor 0.800000 0.600000 0.600000
                                     roughness 1.000000
                                     metalness 0
                                   }
@@ -359,7 +359,7 @@ PROTO PibSimpleDyn [
                                     children [
                                       Shape {
                                         appearance DEF urdf_ellbow_lower_marker_material PBRAppearance {
-                                          baseColor 0.500000 0.500000 0.500000
+                                          baseColor 0.800000 0.600000 0.600000
                                           roughness 1.000000
                                           metalness 0
                                         }
@@ -398,7 +398,7 @@ PROTO PibSimpleDyn [
                                           children [
                                             Shape {
                                               appearance DEF urdf_forearm_marker_material PBRAppearance {
-                                                baseColor 0.500000 0.500000 0.500000
+                                                baseColor 0.800000 0.600000 0.600000
                                                 roughness 1.000000
                                                 metalness 0
                                               }
@@ -436,7 +436,7 @@ PROTO PibSimpleDyn [
                                                 children [
                                                   Shape {
                                                     appearance DEF urdf_palm_right_material PBRAppearance {
-                                                      baseColor 0.500000 0.500000 0.500000
+                                                      baseColor 0.900000 0.800000 0.800000
                                                       roughness 1.000000
                                                       metalness 0
                                                     }
@@ -474,7 +474,7 @@ PROTO PibSimpleDyn [
                                                       children [
                                                         Shape {
                                                           appearance DEF urdf_finger_proximal_marked_material PBRAppearance {
-                                                            baseColor 0.500000 0.500000 0.500000
+                                                            baseColor 0.900000 0.800000 0.800000
                                                             roughness 1.000000
                                                             metalness 0
                                                           }
@@ -511,7 +511,7 @@ PROTO PibSimpleDyn [
                                                             children [
                                                               Shape {
                                                                 appearance DEF urdf_finger_distal_marked_material PBRAppearance {
-                                                                  baseColor 0.500000 0.500000 0.500000
+                                                                  baseColor 0.900000 0.800000 0.800000
                                                                   roughness 1.000000
                                                                   metalness 0
                                                                 }
@@ -1126,7 +1126,7 @@ PROTO PibSimpleDyn [
                                                       children [
                                                         Shape {
                                                           appearance DEF urdf_thumb_rotator_right_material PBRAppearance {
-                                                            baseColor 0.500000 0.500000 0.500000
+                                                            baseColor 0.900000 0.800000 0.800000
                                                             roughness 1.000000
                                                             metalness 0
                                                           }
@@ -1165,7 +1165,7 @@ PROTO PibSimpleDyn [
                                                             children [
                                                               Shape {
                                                                 appearance DEF urdf_finger_proximal_material PBRAppearance {
-                                                                  baseColor 0.500000 0.500000 0.500000
+                                                                  baseColor 0.900000 0.800000 0.800000
                                                                   roughness 1.000000
                                                                   metalness 0
                                                                 }
@@ -1204,7 +1204,7 @@ PROTO PibSimpleDyn [
                                                                   children [
                                                                     Shape {
                                                                       appearance DEF urdf_finger_distal_material PBRAppearance {
-                                                                        baseColor 0.500000 0.500000 0.500000
+                                                                        baseColor 0.900000 0.800000 0.800000
                                                                         roughness 1.000000
                                                                         metalness 0
                                                                       }
@@ -1565,7 +1565,7 @@ PROTO PibSimpleDyn [
                         children [
                           Shape {
                             appearance DEF urdf_shoulder_vertical_material PBRAppearance {
-                              baseColor 0.500000 0.500000 0.500000
+                              baseColor 0.800000 0.600000 0.600000
                               roughness 1.000000
                               metalness 0
                             }
@@ -1636,7 +1636,7 @@ PROTO PibSimpleDyn [
                                     children [
                                       Shape {
                                         appearance DEF urdf_ellbow_lower_material PBRAppearance {
-                                          baseColor 0.500000 0.500000 0.500000
+                                          baseColor 0.800000 0.600000 0.600000
                                           roughness 1.000000
                                           metalness 0
                                         }
@@ -1707,7 +1707,7 @@ PROTO PibSimpleDyn [
                                                 children [
                                                   Shape {
                                                     appearance DEF urdf_palm_left_material PBRAppearance {
-                                                      baseColor 0.500000 0.500000 0.500000
+                                                      baseColor 0.900000 0.800000 0.800000
                                                       roughness 1.000000
                                                       metalness 0
                                                     }
@@ -2155,7 +2155,7 @@ PROTO PibSimpleDyn [
                                                       children [
                                                         Shape {
                                                           appearance DEF urdf_thumb_rotator_left_material PBRAppearance {
-                                                            baseColor 0.500000 0.500000 0.500000
+                                                            baseColor 0.900000 0.800000 0.800000
                                                             roughness 1.000000
                                                             metalness 0
                                                           }

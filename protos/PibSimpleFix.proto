@@ -33,7 +33,7 @@ PROTO PibSimpleFix [
             children [
               Shape {
                 appearance DEF urdf_body_material PBRAppearance {
-                  baseColor 0.500000 0.500000 0.500000
+                  baseColor 0.600000 0.900000 0.600000
                   roughness 1.000000
                   metalness 0
                 }
