@@ -85,10 +85,8 @@ class PibDriver:
         self.__node.get_logger().info('created device: ' + device + '   name: ' + name)
 
 
-    def step(self):
-        rclpy.spin_once(self.__node, timeout_sec=0)
-
-        # position interface, only the first point in a trajectory is considered
+    # position interface, only the first point in a trajectory is considered
+    def set_target_positions(self):
         for index in range(len(self.__target_trajectory.joint_names)):
             name = self.__target_trajectory.joint_names[index]
             if not (name in self.__devices):
@@ -99,3 +97,9 @@ class PibDriver:
             if self.__devices[name] is not None:
                 for dev in self.__devices[name]:
                     dev.setPosition(position)
+
+
+    def step(self):
+        rclpy.spin_once(self.__node, timeout_sec=0)
+
+        self.set_target_positions()
