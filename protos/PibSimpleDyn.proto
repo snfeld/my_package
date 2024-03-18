@@ -163,13 +163,6 @@ PROTO PibSimpleDyn [
                               }
                             ]
                             name "camera_link"
-                            boundingObject Pose {
-                              translation -0.193698 -0.000500 -0.091483
-                              rotation -1.000000 0.000000 0.000000 1.570796
-                              children [
-                                USE camera_link
-                              ]
-                            }
                             physics Physics {
                               density -1
                               mass 0.004000
@@ -177,13 +170,6 @@ PROTO PibSimpleDyn [
                           }
                         ]
                         name "oak_d_lite"
-#                        boundingObject Pose {
-#                          translation -0.022000 -0.015000 0.000000
-#                          rotation 0.577350 0.577350 -0.577350 2.094395
-#                          children [
-#                            USE oak_d_lite
-#                          ]
-#                        }
                         physics Physics {
                           density -1
                           mass 0.048996
@@ -218,13 +204,6 @@ PROTO PibSimpleDyn [
                 }
               ]
               name "urdf_head_base"
-              boundingObject Pose {
-                translation 0.000000 -0.083390 -0.046600
-                rotation 1.000000 0.000000 0.000000 3.141593
-                children [
-                  USE urdf_head_base
-                ]
-              }
               physics Physics {
                 density -1
                 mass 0.140733
@@ -563,12 +542,6 @@ PROTO PibSimpleDyn [
                                                               }
                                                             ]
                                                             name "sticker_purple"
-                                                            boundingObject Pose {
-                                                              translation 0.041832 -0.042995 -0.000200
-                                                              children [
-                                                                USE sticker_purple
-                                                              ]
-                                                            }
                                                             physics Physics {
                                                               density -1
                                                               mass 0.004000
@@ -615,13 +588,6 @@ PROTO PibSimpleDyn [
                                                         }
                                                       ]
                                                       name "sticker_purple_2"
-                                                      boundingObject Pose {
-                                                        translation 0.041832 0.042995 0.000000
-                                                        rotation 1.000000 0.000000 0.000000 3.141593
-                                                        children [
-                                                          USE sticker_purple
-                                                        ]
-                                                      }
                                                       physics Physics {
                                                         density -1
                                                         mass 0.001000
@@ -736,12 +702,6 @@ PROTO PibSimpleDyn [
                                                               }
                                                             ]
                                                             name "sticker_blue"
-                                                            boundingObject Pose {
-                                                              translation 0.056832 -0.057995 -0.000200
-                                                              children [
-                                                                USE sticker_blue
-                                                              ]
-                                                            }
                                                             physics Physics {
                                                               density -1
                                                               mass 0.001000
@@ -788,13 +748,6 @@ PROTO PibSimpleDyn [
                                                         }
                                                       ]
                                                       name "sticker_blue_2"
-                                                      boundingObject Pose {
-                                                        translation 0.056832 0.057995 0.000000
-                                                        rotation -1.000000 -0.000000 -0.000000 3.141593
-                                                        children [
-                                                          USE sticker_blue
-                                                        ]
-                                                      }
                                                       physics Physics {
                                                         density -1
                                                         mass 0.001000
@@ -909,13 +862,6 @@ PROTO PibSimpleDyn [
                                                               }
                                                             ]
                                                             name "sticker_green"
-                                                            boundingObject Pose {
-                                                              translation 0.041832 0.057995 0.000000
-                                                              rotation 1.000000 -0.000000 -0.000000 3.141593
-                                                              children [
-                                                                USE sticker_green
-                                                              ]
-                                                            }
                                                             physics Physics {
                                                               density -1
                                                               mass 0.001000
@@ -962,13 +908,6 @@ PROTO PibSimpleDyn [
                                                         }
                                                       ]
                                                       name "sticker_green_2"
-                                                      boundingObject Pose {
-                                                        translation 0.041832 0.057995 0.000000
-                                                        rotation -1.000000 0.000000 0.000000 3.141593
-                                                        children [
-                                                          USE sticker_green
-                                                        ]
-                                                      }
                                                       physics Physics {
                                                         density -1
                                                         mass 0.001000
@@ -1083,12 +1022,6 @@ PROTO PibSimpleDyn [
                                                               }
                                                             ]
                                                             name "sticker_red"
-                                                            boundingObject Pose {
-                                                              translation 0.056832 -0.042995 -0.000200
-                                                              children [
-                                                                USE sticker_red
-                                                              ]
-                                                            }
                                                             physics Physics {
                                                               density -1
                                                               mass 0.001000
@@ -1135,13 +1068,6 @@ PROTO PibSimpleDyn [
                                                         }
                                                       ]
                                                       name "sticker_red_2"
-                                                      boundingObject Pose {
-                                                        translation 0.056832 0.042995 0.000000
-                                                        rotation 1.000000 -0.000000 0.000000 3.141593
-                                                        children [
-                                                          USE sticker_red
-                                                        ]
-                                                      }
                                                       physics Physics {
                                                         density -1
                                                         mass 0.0010
@@ -1384,13 +1310,6 @@ PROTO PibSimpleDyn [
                                             }
                                           ]
                                           name "sticker_red_3"
-                                          boundingObject Pose {
-                                            translation 0.056832 0.042995 0.000000
-                                            rotation -1.000000 0.000000 0.000000 3.141593
-                                            children [
-                                              USE sticker_red
-                                            ]
-                                          }
                                           physics Physics {
                                             density -1
                                             mass 0.001000
@@ -1416,12 +1335,6 @@ PROTO PibSimpleDyn [
                                             }
                                           ]
                                           name "sticker_green_3"
-                                          boundingObject Pose {
-                                            translation 0.041832 -0.057995 -0.000200
-                                            children [
-                                              USE sticker_green
-                                            ]
-                                          }
                                           physics Physics {
                                             density -1
                                             mass 0.001000
@@ -1467,12 +1380,6 @@ PROTO PibSimpleDyn [
                                       }
                                     ]
                                     name "sticker_blue_3"
-                                    boundingObject Pose {
-                                      translation 0.056832 -0.057995 -0.000200
-                                      children [
-                                        USE sticker_blue
-                                      ]
-                                    }
                                     physics Physics {
                                       density -1
                                       mass 0.001000
@@ -1544,12 +1451,6 @@ PROTO PibSimpleDyn [
                           }
                         ]
                         name "sticker_purple_3"
-                        boundingObject Pose {
-                          translation 0.041832 -0.042995 -0.000200
-                          children [
-                            USE sticker_purple
-                          ]
-                        }
                         physics Physics {
                           density -1
                           mass 0.001000
