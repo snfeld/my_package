@@ -551,7 +551,7 @@ PROTO PibSimpleDyn [
                                                                 children [
                                                                   Shape {
                                                                     appearance DEF sticker_purple_material PBRAppearance {
-                                                                      baseColor 0.500000 0.500000 0.500000
+                                                                      baseColor 0.596078 0.121569 0.674510
                                                                       roughness 1.000000
                                                                       metalness 0
                                                                     }
@@ -724,7 +724,7 @@ PROTO PibSimpleDyn [
                                                                 children [
                                                                   Shape {
                                                                     appearance DEF sticker_blue_material PBRAppearance {
-                                                                      baseColor 0.500000 0.500000 0.500000
+                                                                      baseColor 0.000000 0.000000 1.000000
                                                                       roughness 1.000000
                                                                       metalness 0
                                                                     }
@@ -897,7 +897,7 @@ PROTO PibSimpleDyn [
                                                                 children [
                                                                   Shape {
                                                                     appearance DEF sticker_green_material PBRAppearance {
-                                                                      baseColor 0.500000 0.500000 0.500000
+                                                                      baseColor 0.372549 0.654902 0.239216
                                                                       roughness 1.000000
                                                                       metalness 0
                                                                     }
@@ -1071,7 +1071,7 @@ PROTO PibSimpleDyn [
                                                                 children [
                                                                   Shape {
                                                                     appearance DEF sticker_red_material PBRAppearance {
-                                                                      baseColor 0.500000 0.500000 0.500000
+                                                                      baseColor 1.000000 0.000000 0.000000
                                                                       roughness 1.000000
                                                                       metalness 0
                                                                     }
