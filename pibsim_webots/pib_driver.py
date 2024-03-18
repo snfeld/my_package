@@ -8,24 +8,34 @@ class PibDriver:
 
         self.__devices = {}
 
-        self.__devices['tilt_sideways_motor'] = self.__robot.getDevice('head_horizontal')
-        self.__devices['tilt_forward_motor'] = self.__robot.getDevice('head_vertical')
-        self.__devices['shoulder_horizontal_right'] = self.__robot.getDevice('shoulder_horizontal_right')
-        self.__devices['elbow_right'] = self.__robot.getDevice('ellbow_right')
-        self.__devices['elbow_left'] = self.__robot.getDevice('ellbow_left')
+        self.__devices['tilt_sideways_motor'] = [self.__robot.getDevice('head_horizontal'),]
+        self.__devices['tilt_forward_motor'] = [self.__robot.getDevice('head_vertical'),]
+        self.__devices['shoulder_horizontal_right'] = [self.__robot.getDevice('shoulder_horizontal_right'),]
+        self.__devices['elbow_right'] = [self.__robot.getDevice('ellbow_right'),]
+        self.__devices['elbow_left'] = [self.__robot.getDevice('ellbow_left'),]
 
-        self.__devices['lower_arm_right_rotation'] = self.__robot.getDevice('forearm_right')
-        self.__devices['lower_arm_left_rotation'] = self.__robot.getDevice('forearm_left')
-        self.__devices['thumb_left_stretch'] = [self.__robot.getDevice('thumb_left_distal'), self.__robot.getDevice('thumb_left_proximal'),]
-        self.__devices['thumb_right_stretch'] = [self.__robot.getDevice('thumb_right_distal'),self.__robot.getDevice('thumb_right_proximal'),]
-        self.__devices['index_right_stretch'] = [self.__robot.getDevice('index_right_distal'),self.__robot.getDevice('index_right_proximal'),]
-        self.__devices['middle_right_stretch'] = [self.__robot.getDevice('middle_right_distal'),self.__robot.getDevice('middle_right_proximal'),]
-        self.__devices['ring_right_stretch'] = [self.__robot.getDevice('ring_right_distal'),self.__robot.getDevice('ring_right_proximal'),]
-        self.__devices['pinky_right_stretch'] = [self.__robot.getDevice('pinky_right_distal'),self.__robot.getDevice('pinky_right_proximal'),]
-        self.__devices['index_left_stretch'] = [self.__robot.getDevice('index_left_distal'),self.__robot.getDevice('index_left_proximal'),]
-        self.__devices['middle_left_stretch'] = [self.__robot.getDevice('middle_left_distal'),self.__robot.getDevice('middle_left_proximal'),]
-        self.__devices['ring_left_stretch'] = [self.__robot.getDevice('ring_left_distal'),self.__robot.getDevice('ring_left_proximal'),]
-        self.__devices['pinky_left_stretch'] = [self.__robot.getDevice('pinky_left_distal'),self.__robot.getDevice('pinky_left_proximal'),]
+        self.__devices['lower_arm_right_rotation'] = [self.__robot.getDevice('forearm_right'),]
+        self.__devices['lower_arm_left_rotation'] = [self.__robot.getDevice('forearm_left'),]
+        self.__devices['thumb_left_stretch'] = [self.__robot.getDevice('thumb_left_distal'), 
+                                                self.__robot.getDevice('thumb_left_proximal'),]
+        self.__devices['thumb_right_stretch'] = [self.__robot.getDevice('thumb_right_distal'),
+                                                self.__robot.getDevice('thumb_right_proximal'),]
+        self.__devices['index_right_stretch'] = [self.__robot.getDevice('index_right_distal'),
+                                                self.__robot.getDevice('index_right_proximal'),]
+        self.__devices['middle_right_stretch'] = [self.__robot.getDevice('middle_right_distal'),
+                                                self.__robot.getDevice('middle_right_proximal'),]
+        self.__devices['ring_right_stretch'] = [self.__robot.getDevice('ring_right_distal'),
+                                                self.__robot.getDevice('ring_right_proximal'),]
+        self.__devices['pinky_right_stretch'] = [self.__robot.getDevice('pinky_right_distal'),
+                                                self.__robot.getDevice('pinky_right_proximal'),]
+        self.__devices['index_left_stretch'] = [self.__robot.getDevice('index_left_distal'),
+                                                self.__robot.getDevice('index_left_proximal'),]
+        self.__devices['middle_left_stretch'] = [self.__robot.getDevice('middle_left_distal'),
+                                                self.__robot.getDevice('middle_left_proximal'),]
+        self.__devices['ring_left_stretch'] = [self.__robot.getDevice('ring_left_distal'),
+                                                self.__robot.getDevice('ring_left_proximal'),]
+        self.__devices['pinky_left_stretch'] = [self.__robot.getDevice('pinky_left_distal'),
+                                                self.__robot.getDevice('pinky_left_proximal'),]
         self.__devices['all_fingers_right'] = [self.__robot.getDevice('pinky_right_distal'),
                 self.__robot.getDevice('pinky_right_proximal'),
                 self.__robot.getDevice('index_right_distal'),
@@ -57,12 +67,22 @@ class PibDriver:
         self.__node.create_subscription(JointTrajectory, '/joint_trajectory', self.__trajectory_callback, 1)
         self.__node.get_logger().info("nach create subscribe")
 
-    def __cmd_vel_callback(self, twist):
-        self.__target_twist = twist
 
     def __trajectory_callback(self, trajectory):
         self.__target_trajectory = trajectory
         self.__node.get_logger().info("trajectory callback " + trajectory.joint_names[0] + '  ' + str(trajectory.points[0].positions[0]))
+
+    def convert_cerebra(self, position):
+        return (math.radians(position/100.0))
+
+    def create_device(self, name):
+        rotIndex = name.find('rota')
+        if rotIndex != -1 :
+            device = name[:(rotIndex-1)]
+        else:
+            device = name
+        self.__devices[name] = [self.__robot.getDevice(device),]
+        self.__node.get_logger().info('created device: ' + device + '   name: ' + name)
 
 
     def step(self):
@@ -71,17 +91,10 @@ class PibDriver:
         if len(self.__target_trajectory.joint_names) > 0:
             name = self.__target_trajectory.joint_names[0]
             if not (name in self.__devices):
-                rotIndex = name.find('rota')
-                if rotIndex != -1 :
-                    device = name[:(rotIndex-1)]
-                else:
-                    device = name
-                self.__devices[name] = self.__robot.getDevice(device)
-                self.__node.get_logger().info('created device: ' + device + '   name: ' + name)
-            position = math.radians(self.__target_trajectory.points[0].positions[0]/100.0)
+                self.create_device(name)
+
+            position = self.convert_cerebra(self.__target_trajectory.points[0].positions[0])
+
             if self.__devices[name] is not None:
-                if (name.find('stretch') != -1) or (name.find('all') != -1) :
-                    for dev in self.__devices[name]:
-                        dev.setPosition(position)
-                else:
-                    self.__devices[name].setPosition(position)
+                for dev in self.__devices[name]:
+                    dev.setPosition(position)
