@@ -36,29 +36,21 @@ class PibDriver:
                                                 self.__robot.getDevice('ring_left_proximal'),]
         self.__devices['pinky_left_stretch'] = [self.__robot.getDevice('pinky_left_distal'),
                                                 self.__robot.getDevice('pinky_left_proximal'),]
-        self.__devices['all_fingers_right'] = [self.__robot.getDevice('pinky_right_distal'),
-                self.__robot.getDevice('pinky_right_proximal'),
-                self.__robot.getDevice('index_right_distal'),
-                self.__robot.getDevice('index_right_proximal'),
-                self.__robot.getDevice('middle_right_distal'),
-                self.__robot.getDevice('middle_right_proximal'),
-                self.__robot.getDevice('ring_right_distal'),
-                self.__robot.getDevice('ring_right_proximal'),
-                self.__robot.getDevice('thumb_right_distal'), 
-                self.__robot.getDevice('thumb_right_proximal'),
-                ]
-        self.__devices['all_fingers_left'] = [self.__robot.getDevice('pinky_left_distal'),
-                self.__robot.getDevice('pinky_left_proximal'),
-                self.__robot.getDevice('index_left_distal'),
-                self.__robot.getDevice('index_left_proximal'),
-                self.__robot.getDevice('middle_left_distal'),
-                self.__robot.getDevice('middle_left_proximal'),
-                self.__robot.getDevice('ring_left_distal'),
-                self.__robot.getDevice('ring_left_proximal'),
-                self.__robot.getDevice('thumb_left_distal'), 
-                self.__robot.getDevice('thumb_left_proximal'),
-                ]
 
+        self.__devices['all_fingers_right'] = []
+        self.__devices['all_fingers_right'].extend(self.__devices['thumb_right_stretch'])
+        self.__devices['all_fingers_right'].extend(self.__devices['index_right_stretch'])
+        self.__devices['all_fingers_right'].extend(self.__devices['middle_right_stretch'])
+        self.__devices['all_fingers_right'].extend(self.__devices['ring_right_stretch'])
+        self.__devices['all_fingers_right'].extend(self.__devices['pinky_right_stretch'])
+
+        self.__devices['all_fingers_left'] = []
+        self.__devices['all_fingers_left'].extend(self.__devices['thumb_left_stretch'])
+        self.__devices['all_fingers_left'].extend(self.__devices['index_left_stretch'])
+        self.__devices['all_fingers_left'].extend(self.__devices['middle_left_stretch'])
+        self.__devices['all_fingers_left'].extend(self.__devices['ring_left_stretch'])
+        self.__devices['all_fingers_left'].extend(self.__devices['pinky_left_stretch'])
+        
         self.__target_trajectory = JointTrajectory()
 
         rclpy.init(args=None)
