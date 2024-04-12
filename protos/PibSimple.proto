@@ -141,9 +141,12 @@ PROTO PibSimple [
                               }
                             ]
                           }
-                          Solid {
+                          Camera {
                             translation -0.002411 0.008916 0.000001
-                            rotation -0.707107 -0.000000 -0.707107 3.141593
+                            rotation 0.709 0.0000 0.00 1.570
+                            width 320
+                            height 240
+                            fieldOfView 1.2
                             children [
                               Pose {
                                 translation -0.193698 -0.000500 -0.091483
